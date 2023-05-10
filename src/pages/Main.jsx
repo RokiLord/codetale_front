@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
 import Navbar from "../component/Navbar";
 import Header from "../component/Header";
+import { useNavigate } from "react-router-dom";
 
 function Main() {
+
+
   return (
     <Fragment className="g-sidenav-show">
       <Navbar />
@@ -278,13 +281,6 @@ function Main() {
                 <div className="card-body">
                   <h4>AI Coding Education System</h4>
                   <p></p>
-                  <a href="/#" className="text-primary icon-move-right">
-                    More about us
-                    <i
-                      className="fas fa-arrow-right text-xs ms-1"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
                 </div>
               </div>
             </div>
