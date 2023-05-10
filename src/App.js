@@ -1,8 +1,8 @@
 
 import './App.css';
 import Login from './pages/Login';
-import './pages/Main.js'
-import Main from './pages/Main.js';
+import './pages/Main.jsx'
+import Main from './pages/Main.jsx';
 
 
 function App() {
