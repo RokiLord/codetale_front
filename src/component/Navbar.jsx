@@ -13,20 +13,34 @@ function Navbar() {
 
   }
 
+  const moveToLoginPage = () => {
+    navigate("/login");
+  }
+
+  const moveToMainPage = () => {
+    navigate("/");
+  }
+
+  const moveToCodeEditor = () => {
+    navigate("/codeEditor");
+
+  };
+
   return (
     <Fragment>
 
         <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
           <div className="container">
-            <a
+            <div
+              onClick={moveToMainPage}
               className="navbar-brand"
-              href="/#"
+
               rel="tooltip"
               title="Designed and Coded by Creative Tim"
               data-placement="bottom"
             >
               CodeTale
-            </a>
+            </div>
             <button
               className="navbar-toggler shadow-none ms-2"
               type="button"
@@ -72,227 +86,33 @@ function Navbar() {
                       </div>
 
 
-                      <div className="dropdown-item border-radius-md">
+                      <div
+                      onClick={moveToCodeEditor}
+                      className="dropdown-item border-radius-md">
                         Code Test
                       </div>
-                      <div className="dropdown-item border-radius-md">
-                        Author
-                      </div>
-                      <div className="dropdown-item border-radius-md">
+
+                      <div onClick={moveToLoginPage} className="dropdown-item border-radius-md">
                         Sign In
                       </div>
                     </div>
 
                     <div className="d-lg-none">
-                      <a href="/#" className="dropdown-item border-radius-md">
+                      <div  className="dropdown-item border-radius-md">
                         About Us
-                      </a>
-                      <a href="/#" className="dropdown-item border-radius-md">
+                      </div>
+                      <div className="dropdown-item border-radius-md">
                         Contact Us
-                      </a>
-                      <a href="/#" className="dropdown-item border-radius-md">
-                        Author
-                      </a>
-                      <a href="/#" className="dropdown-item border-radius-md">
+                      </div>
+
+                      <div onClick={moveToLoginPage} className="dropdown-item border-radius-md">
                         Sign In
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </li>
 
-                <li className="nav-item dropdown dropdown-hover mx-2">
-                  <a
-                    href="#!"
-                    className="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                    id="dropdownMenuBlocks"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Blocks
-                    <img
-                      src="https://demos.creative-tim.com/soft-ui-design-system/assets/img/down-arrow-dark.svg"
-                      alt="down-arrow"
-                      className="arrow ms-1"
-                    />
-                  </a>
-                  <ul
-                    className="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3"
-                    aria-labelledby="dropdownMenuBlocks"
-                  >
-                    <div className="d-none d-lg-block">
-                      <li className="nav-item dropdown dropdown-hover dropdown-subitem">
-                        <a
-                          className="dropdown-item py-2 ps-3 border-radius-md"
-                          href="/#"
-                        >
-                          <div className="d-flex">
-                            <div className="icon h-10 me-3 d-flex mt-1">
-                              <i className="ni ni-single-copy-04 text-gradient text-primary"></i>
-                            </div>
-                            <div className="w-100 d-flex align-items-center justify-content-between">
-                              <div>
-                                <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                                  Page Sections
-                                </h6>
-                                <span className="text-sm">
-                                  See all 109 sections
-                                </span>
-                              </div>
 
-                              <img
-                                src="https://demos.creative-tim.com/soft-ui-design-system/assets/img/down-arrow.svg"
-                                alt="down-arrow"
-                                className="arrow"
-                              />
-                            </div>
-                          </div>
-                        </a>
-                        <div
-                          className="dropdown-menu mt-0 py-3 px-2 mt-3"
-                          aria-labelledby="pageSections"
-                        >
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Page Headers
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Features
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Pricing
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            FAQ
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Blog Posts
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Testimonials
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Teams
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Stats
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Call to Actions
-                          </a>
-                          <a
-                            className="dropdown-item ps-3 border-radius-md mb-1"
-                            href="/#"
-                          >
-                            Logo Areas
-                          </a>
-                        </div>
-                      </li>
-                    </div>
-
-                    <div className="row d-lg-none">
-                      <div className="col-md-12">
-                        <div className="d-flex mb-2">
-                          <div className="icon h-10 me-3 d-flex mt-1">
-                            <i className="ni ni-single-copy-04 text-gradient text-primary"></i>
-                          </div>
-                          <div className="w-100 d-flex align-items-center justify-content-between">
-                            <div>
-                              <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                                Page Sections
-                              </h6>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Page Headers
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Features
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Pricing
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          FAQ
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Blog Posts
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Testimonials
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Teams
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Stats
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Call to Actions
-                        </a>
-                        <a
-                          className="dropdown-item ps-3 border-radius-md mb-1"
-                          href="/#"
-                        >
-                          Applications
-                        </a>
-                      </div>
-                    </div>
-                  </ul>
-                </li>
 
                 <li className="nav-item dropdown dropdown-hover mx-2">
                   <a
@@ -612,11 +432,11 @@ function Navbar() {
                             </div>
                             <div>
                               <h6 className="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
-                                Utility ClassNameclassNamees
+                                Utility ClassName
                               </h6>
                               <span className="text-sm">
                                 For those who want flexibility, use our utility
-                                classNamees
+                                classNames
                               </span>
                             </div>
                           </div>
@@ -927,12 +747,12 @@ function Navbar() {
                   </ul>
                 </li>
                 <li className="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
-                  <a
-                    href="/#"
+                  <div onClick={moveToLoginPage}
+
                     className="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0"
                   >
                     Sign In
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>

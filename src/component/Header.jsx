@@ -1,5 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 function Header(){
-    return (
+
+
+  const navigate = useNavigate();
+
+  const moveToCodeEditor = () => {
+    navigate("/codeEditor");
+
+  };
+
+
+  return (
         <header className="">
         <div className="page-header min-vh-100">
           <div className="oblique position-absolute top-0 h-100 d-md-block d-none">
@@ -24,6 +36,7 @@ function Header(){
                   <button
                     type="button"
                     className="btn bg-gradient-primary mt-4"
+                    onClick={moveToCodeEditor}
                   >
                     Get Started
                   </button>
