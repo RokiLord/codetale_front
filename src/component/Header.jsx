@@ -26,8 +26,8 @@ function Header(){
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
-                <h1 className="text-gradient text-primary">Your Work With</h1>
-                <h1 className="mb-4">AI Coding System</h1>
+                <h1 className="text-gradient text-primary" style={{fontSize: "2.5em"}}>Your Work With</h1>
+                <h1 className="mb-4" style={{fontSize: "2.5em"}}>AI Coding System</h1>
                 <p className="lead pe-5 me-5">
                   The time for coding with AI. Personalized Recommendation
                   with StoryTelling are waiting

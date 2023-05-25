@@ -1,14 +1,124 @@
+import React from 'react';
+import { Fragment, useState} from 'react';
+
 import Navbar from "../component/Navbar";
-import Week from "../component/Week";
+import "./Curriculum.css";
 
-function Curriculum(){
-    return(
-        <div>
+function Curriculum() {
 
-            <Navbar />
-            <Week />
-        </div>
-    )
+    const getCheckboxValue = (event) => {
+        let result = '';
+        if (event.target.checked) {
+            result = event.target.value;
+        } else {
+            result = '';
+        }
+        console.log(result);
+    };
+
+
+
+    return (
+        <Fragment className="curriculum_backgroud">
+
+            <button class="back_button" ><img src="../images/backspace.jpg" height="50" /></button>
+
+            <div className="support-grid"></div>
+
+            <div className="band">
+                <div className="title">
+                    <a href="/#" className="card">
+                        <article>
+                            <h1>Curriculum</h1>
+                        </article>
+                    </a>
+                </div>
+                <div className="item-1">
+                    <a href="/#" className="card">
+                        <div className="thumb" ></div>
+                        <article>
+                            <h1>Week1</h1>
+                            Ohyeah
+                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <div className="checkbox" style={{ marginTop: "1rem" }}>
+                                check
+                                <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
+                            </div>
+                        </article>
+
+                    </a>
+                </div>
+                <div className="item-2">
+                    <a href="/#" className="card">
+                        <div className="thumb" ></div>
+                        <article>
+                            <h1>Week2</h1>
+                            Ohyeah
+                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <div className="checkbox" style={{ marginTop: "1rem" }}>
+                                check
+                                <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
+                            </div>
+                        </article>
+                    </a>
+                </div>
+                <div className="item-3">
+                    <a href="/#" className="card">
+                        <div className="thumb" style={{ backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/flex-5.jpg)" }}></div>
+                        <article>
+                            <h1>Week3</h1>
+                            Ohyeah
+                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <div className="checkbox" style={{ marginTop: "1rem" }}>
+                                check
+                                <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
+                            </div>
+
+                        </article>
+                    </a>
+                </div>
+                <div className="item-4">
+                    <a href="/#" className="card">
+                        <div className="thumb" style={{ backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/landing.png);" }}></div>
+                        <article>
+                            <h1>Week4</h1>
+                            Ohyeah
+                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <div className="checkbox" style={{ marginTop: "1rem" }}>
+                                check
+                                <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
+                            </div>
+                        </article>
+                    </a>
+                </div>
+                <div className="item-5">
+                    <a href="/#" className="card">
+                        <div className="thumb" style={{ backgroundImage: "url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/strange.jpg)" }}></div>
+                        <article>
+                            <h1>Week5</h1>
+                            Ohyeah
+                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <div className="checkbox" style={{ marginTop: "1rem" }}>
+                                check
+                                <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+
+        </Fragment>
+    );
 }
 
 export default Curriculum;
