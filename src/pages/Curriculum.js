@@ -74,9 +74,15 @@ function Curriculum() {
                         <article>
                             <h1>Week2</h1>
                             Ohyeah
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 4 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 5 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 6 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -90,9 +96,15 @@ function Curriculum() {
                         <article>
                             <h1>Week3</h1>
                             Ohyeah
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 7 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 8 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 9 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -107,9 +119,15 @@ function Curriculum() {
                         <article>
                             <h1>Week4</h1>
                             Ohyeah
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 10 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 11 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 12 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -123,9 +141,15 @@ function Curriculum() {
                         <article>
                             <h1>Week5</h1>
                             Ohyeah
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button value={1} onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 13 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 14 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={() => {
+                                    navigate("/content", { state: { num: 15 } });
+                                }} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />

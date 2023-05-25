@@ -11,8 +11,15 @@ function Content(props) {
     const [data, setData] = useState([]);
 
     // Inside the component or useEffect
+    /*
     useEffect(() => {
-        fetch('/api/data/')
+        fetch(`url`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                 Authorization: `Token ${localStorage.getItem('token')}`
+            },
+        })
             .then(response => response.json())
             .then(data => {
                 setData(data);
@@ -22,10 +29,11 @@ function Content(props) {
             });
     }, []);
 
-
+    */
 
     const location = useLocation();
     const num = location.state.num;
+    console.log(num);
 
     /*
         const string = data.map((item) => { item.id == num ? item.content : "" });
