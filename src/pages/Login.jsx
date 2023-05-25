@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import "./Login.css"
-import $ from 'jquery';
+
 
 function Login(props) {
 
@@ -75,9 +75,9 @@ function Login(props) {
 
           <div class="expenses-filter">
             <div className="expenses-filter__control">
-              <label>Select Language</label>
+              <label>Select Teller</label>
               <select >
-                <option value="C++" >C++</option>
+                <option value="C++" ></option>
                 <option value="Java">Java</option>
                 <option value="Javascript">Javascript</option>
                 <option value="Python">Python</option>

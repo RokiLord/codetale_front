@@ -47,8 +47,8 @@ function Curriculum() {
                             <button
                             onClick={moveToWorkbook}
                             style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={moveToWorkbook}style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={moveToWorkbook}style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -63,9 +63,9 @@ function Curriculum() {
                         <article>
                             <h1>Week2</h1>
                             Ohyeah
-                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -79,9 +79,9 @@ function Curriculum() {
                         <article>
                             <h1>Week3</h1>
                             Ohyeah
-                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -96,9 +96,9 @@ function Curriculum() {
                         <article>
                             <h1>Week4</h1>
                             Ohyeah
-                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={moveToWorkbook}style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button  onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
@@ -112,9 +112,9 @@ function Curriculum() {
                         <article>
                             <h1>Week5</h1>
                             Ohyeah
-                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 2 </button>
-                            <button style={{ marginTop: "1rem" }}> chapter 3 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 2 </button>
+                            <button onClick={moveToWorkbook} style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
                                 check
                                 <input type="checkbox" name="input_check" value="4" id="check" onChange={getCheckboxValue} />
