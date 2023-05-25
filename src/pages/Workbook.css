@@ -1,6 +1,4 @@
-html {
 
-  }
 
   .content_background{
     background: #f5f7f8;
@@ -8,7 +6,7 @@ html {
     padding: 20px 0;
   }
 
-  .band {
+  .band_workbook {
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
@@ -19,11 +17,11 @@ html {
   }
 
   @media only screen and (min-width: 500px) {
-    .band {
+    .band_workbook {
       grid-template-columns: 1fr;
     }
 
-    .title {
+    .title_workbook {
       grid-column: 1/6;
     }
 
@@ -33,7 +31,7 @@ html {
   }
 
   @media only screen and (min-width: 800px) {
-    .band {
+    .band_workbook {
 
       grid-template-columns: 1fr;
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fragment, useState} from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import Navbar from "../component/Navbar";
 import "./Curriculum.css";
 
@@ -16,6 +16,11 @@ function Curriculum() {
         console.log(result);
     };
 
+    const navigate = useNavigate();
+
+    const moveToWorkbook = () => {
+        navigate("/content");
+    };
 
 
     return (
@@ -27,19 +32,21 @@ function Curriculum() {
 
             <div className="band">
                 <div className="title">
-                    <a href="/#" className="card">
+                    <a className="card">
                         <article>
                             <h1>Curriculum</h1>
                         </article>
                     </a>
                 </div>
                 <div className="item-1">
-                    <a href="/#" className="card">
+                    <a className="card">
                         <div className="thumb" ></div>
                         <article>
                             <h1>Week1</h1>
                             Ohyeah
-                            <button style={{ marginTop: "1rem" }}> chapter 1 </button>
+                            <button
+                            onClick={moveToWorkbook}
+                            style={{ marginTop: "1rem" }}> chapter 1 </button>
                             <button style={{ marginTop: "1rem" }}> chapter 2 </button>
                             <button style={{ marginTop: "1rem" }}> chapter 3 </button>
                             <div className="checkbox" style={{ marginTop: "1rem" }}>
