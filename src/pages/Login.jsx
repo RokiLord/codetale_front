@@ -1,113 +1,103 @@
 import React, { Fragment } from 'react';
 import "./Login.css"
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 function Login(props) {
 
 
+  const navigate  = useNavigate();
 
+  const moveToRegisterPage = () => {
+    navigate("/register");
+  }
 
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
+  // User Login info
+  const database = [
+    {
+      user_id: "user1",
+      password: "pass1",
+    },
+    {
+      user_id: "user2",
+      password: "pass2"
+    }
+  ];
 
+  const errors = {
+    uname: "invalid user id",
+    pass: "invalid password"
+  };
 
-  return (
-    <Fragment className="fragbody">
+  const handleSubmit = (event) => {
+    //Prevent page reload
+    event.preventDefault();
 
-      <div class="main_view">
-        <div class="login_and_sign_up">
-          <div class="top_box" id="login">Login</div>
-          <div class="not_selected_box" id="sign_up">Sign Up</div>
+    var { uname, pass } = document.forms[0];
+
+    // Find user login info
+    const userData = database.find((user) => user.user_id === uname.value);
+
+    // Compare user info
+    if (userData) {
+      if (userData.password !== pass.value) {
+        // Invalid password
+        setErrorMessages({ name: "pass", message: errors.pass });
+      } else {
+        setIsSubmitted(true);
+        console.log(userData);
+      }
+    } else {
+      // user_id not found
+      setErrorMessages({ name: "uname", message: errors.uname });
+    }
+  };
+
+  // Generate JSX code for error message
+  const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+      <div className="login_error">{errorMessages.message}</div>
+    );
+
+  // -----------------------------------------------------------------
+  // JSX code for login form
+  const renderForm = (
+    <div className="login_form">
+      <form onSubmit={handleSubmit}>
+        <div className="login_input-container">
+          <label>user_id </label>
+          <input type="text" name="uname" required />
+          {renderErrorMessage("uname")}
         </div>
-        <div class="log_in_view">
-          <div class="label">Login</div>
-          <div class="label2" id="label2">Enter user name and passowords</div>
-          <div class="submit_form">
-            <div class="form_top">Email</div>
-            <div class="new_input">
-              <input class="user_input" id="login_email" placeholder="Email" />
-            </div>
-          </div>
-          <div class="submit_form">
-            <div class="form_top">Password</div>
-            <div class="new_input">
-              <input class="user_input" id="login_password" type="password" placeholder="Password" />
-            </div>
-
-          </div>
-          <div class="login_button" id="botton_log_in">Login</div>
+        <div className="login_input-container">
+          <label>Password </label>
+          <input type="password" name="pass" required />
+          {renderErrorMessage("pass")}
         </div>
-
-        <div class="sign_up_view">
-          <div class="label">Sign up</div>
-
-          <div class="submit_form">
-            <div class="form_top"> User name</div>
-            <div class="new_input">
-              <input class="user_input" id="first" placeholder="User name" />
-            </div>
-          </div>
-          <div class="submit_form">
-            <div class="form_top"> Email ID</div>
-            <div class="new_input">
-              <input class="user_input" id="email" placeholder="Please keep the email format" />
-            </div>
-          </div>
-          <div class="submit_form">
-            <div class="form_top">Password</div>
-            <div class="new_input">
-              <input class="user_input" type="password" id="password" placeholder="Password" />
-            </div>
-          </div>
-          <div class="submit_form">
-            <div class="form_top">Confirm password</div>
-            <div class="new_input">
-              <input class="user_input" type="password" id="confirm_password" placeholder="Confirm password" />
-            </div>
-          </div>
-          <div class="gender">
-            <div class="gender_form" >
-              <input type="radio" id="male" /> Student
-            </div>
-            <div class="gender_form" >
-              <input type="radio" id="female" /> Teacher
-            </div>
-          </div>
-
-          <div class="expenses-filter">
-            <div className="expenses-filter__control">
-              <label>Select Teller</label>
-              <select >
-                <option value="C++" ></option>
-                <option value="Java">Java</option>
-                <option value="Javascript">Javascript</option>
-                <option value="Python">Python</option>
-              </select>
-            </div>
-          </div>
-
-
-
-          <div class="login_button" id="bottom_sign_up">Sign Up</div>
+        <div className="login_button-container">
+          <input type="submit" />
         </div>
-
-        <div class="end_sign_up_view">
-          <div class="new_label">You are signed up.</div>
-        </div>
-
-        <div class="end_login_view">
-          <div class="new_label">You are logged in.</div>
-        </div>
-      </div>
-    </Fragment >
+      </form>
+    </div>
   );
 
+  return (
+    <div className="login_app">
+      <div className="login-form">
+        <div className="login_title">Sign In</div>
 
+
+        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+      </div>
+      <p>Are not Registered?</p>
+      <button onClick={moveToRegisterPage}>Sign up</button>
+    </div>
+  );
 }
-
-
-
-
-
 
 
 export default Login;

@@ -7,6 +7,7 @@ import Main from './pages/Main.jsx';
 import Curriculum from './pages/Curriculum'
 import Content from './pages/Content';
 import CodeEditor from './pages/CodeEditor';
+import Register from './pages/Register';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="login" element={<Login  />} />
+          <Route path='register' element={<Register />} />
           <Route path="curriculum" element={<Curriculum />} />
           <Route path="content" element={<Content />} />
           <Route path="codeeditor" element={<CodeEditor />} />

@@ -1,253 +1,148 @@
-
-
-.fragbody{
-    background-color: #384047;
-    min-height: 100vh;
-    min-width: 100vh;
-    max-width: 500vh;
+.login_app {
+    font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.main_view{
-    display: flex;
     flex-direction: column;
-}
+    gap: 20px;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #f8f9fd;
+  }
 
-.top_box{
+  input[type="text"],
+  input[type="password"] {
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  input[type="submit"] {
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #01d28e;
+    border: 1px solid #01d28e;
+    color: #fff;
+    padding: 10px 20px;
+  }
+
+  input[type="submit"]:hover {
+    background: #6cf0c2;
+  }
+
+  .login_button-container {
     display: flex;
-    width: 13em;
-    height: 3em;
+    justify-content: center;
+  }
+
+  .login-form {
     background-color: white;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    border-top: 0.4em solid #2F558E;
-}
-
-.top_box:hover{
-    cursor: pointer;
-}
-
-.not_selected_box{
-    display: flex;
-    width: 13em;
-    height: 3em;
-    background-color: #DDDDDD;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    border-top: 0.4em solid #DDDDDD;
-}
-
-.not_selected_box:hover{
-    cursor: pointer;
-}
-
-
-.log_in_view{
-    display: flex;
-    flex-direction: column;
-    gap: 1.6em;
-    background-color: #1F2327;
-    padding: 1.6em;
-    width: 28em;
-}
-
-.end_sign_up_view{
-    display: flex;
-    flex-direction: column;
-    gap: 1.6em;
-    background-color: #1F2327;
-    padding: 1.6em;
-    width: 28em;
-}
-
-.end_login_view{
-    display: flex;
-    flex-direction: column;
-    gap: 1.6em;
-    background-color: #1F2327;
-    padding: 1.6em;
-    width: 28em;
-}
-
-.label{
-    font-size: 2em;
-    font-weight: bold;
-    color: white;
-}
-
-.label2{
-    color: white;
-    font-weight: bold;
-}
-
-.new_label{
-    color: white;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.submit_form{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.form_top{
-    color: white;
-    font-size: 0.9em;
-}
-
-.user_input{
-    background-color: #1F2327;
-    font-size: 0.9em;
-    height: 2.5em;
-    border: 1px solid white;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    width: 30em;
-}
-
-.user_input:checked{
-    color: green;
-}
-
-.login_and_sign_up{
-    display: flex;
-    flex-direction: row;
-}
-
-.login_button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.5em;
-    background-color: #3B5494;
-    height: 2.2em;
-}
-
-
-.sign_up_view{
-    display: flex;
-    flex-direction: column;
-    gap: 1.6em;
-    background-color: #1F2327;
-    padding: 1.6em;
-    width: 28em;
-}
-.gender_form{
-    color: white;
-}
-
-.new_input{
-    height: 3em;
-}
-
-.error{
-    color: white;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    font-size: 1em;
-    left : 28.5em;
-    bottom: 2.5em;
-    width: fit-content;
-    height: 0.9em;
-    padding:0.7em;
-    border-radius: 7px;
-    background-color: #3C5F98;
-}
-
-.gender_error{
-    color: white;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    font-size: 1em;
-    left : 18.4em;
-    bottom: 0.6em;
-    width: fit-content;
-    height: 0.9em;
-    padding:0.7em;
-    border-radius: 7px;
-    background-color: #3C5F98;
-}
-
-.gender{
-    display: flex;
-    flex-direction: row;
-    height: 1em;
-    gap: 1em;
-    width: 30em;
-}
-
-.user_input:focus{
-    outline: none !important;
-}
-
-.check{
-    color: green;
-    font-size: 2em;
-    font-weight: bold;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    left :12.2em;
-    bottom: 1.2em;
-    width: fit-content;
-}
-
-.gender_check{
-    color: green;
-    font-size: 2em;
-    font-weight: bold;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    position: relative;
-    left : 7.1em;
-    width: fit-content;
-}
-
-.login_button:hover{
-    cursor: pointer;
-}
-
-/* ------------------------------------- */
-/* Drop box */
-
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-.expenses-filter {
-    color: white;
-    padding: 0 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .expenses-filter__control {
+  .login_list-container {
     display: flex;
-    width: 100%;
+  }
+
+  .login_error {
+    color: red;
+    font-size: 12px;
+  }
+
+  .login_title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .login_input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  }.Login {
+    text-align: center;
+  }
+
+  .Login-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .Login-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+  .Login-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  .Login-link {
+    color: #61dafb;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .login_container {
+    min-width: 150px;
+    box-shadow: 0 4px 5px 0 #00000026;
+    position: relative;
+    z-index: 10;
+  }
+  #dropdown {
+    left: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  .dropdownLabel {
+    display: flex;
     justify-content: space-between;
-    margin: 1rem 0;
+    padding: 12px;
+  }
+  .dropdownLabel:hover {
+    cursor: pointer;
+  }
+  .login_content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 5px 0 #00000026;
   }
 
-  .expenses-filter label {
-    font-weight: bold;
-    margin-bottom: 1.0rem;
-    font-color: black;
+  #dropdown:checked + label + div.content {
+    display: block;
+    border-top: 1px solid #00000026;
+  }
+  .caretIcon {
+    transition: transform 250ms ease-out;
+  }
+  #dropdown:checked + label > .caretIcon {
+    transform: rotate(-180deg);
   }
 
-  .expenses-filter select {
-    font: inherit;
-    padding: 0.5rem 3rem;
-    font-weight: bold;
-    border-radius: 6px;
+  .content ul {
+    list-style-type: none;
+    padding: 12px;
+    margin: 0;
+  }
+  .content ul li {
+    margin: 0.8rem 0;
   }
