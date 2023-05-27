@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "./Login.css";
+import Navbar from "../component/Navbar";
 
 
 const options = [
@@ -133,12 +134,15 @@ function Register(){
   );
 
   return (
+    <Fragment>
+    <Navbar />
     <div className="login_app">
       <div className="login-form">
         <div className="login_title">Sign Up</div>
         {renderForm}
       </div>
     </div>
+    </Fragment>
   );
 }
 

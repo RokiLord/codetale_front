@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import "./Login.css"
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../component/Navbar';
 
 
 function Login(props) {
@@ -86,6 +87,8 @@ function Login(props) {
   );
 
   return (
+    <Fragment>
+    <Navbar/>
     <div className="login_app">
       <div className="login-form">
         <div className="login_title">Sign In</div>
@@ -96,6 +99,7 @@ function Login(props) {
       <p>Are not Registered?</p>
       <button onClick={moveToRegisterPage}>Sign up</button>
     </div>
+    </Fragment>
   );
 }
 

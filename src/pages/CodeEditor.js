@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "../component/Navbar";
+import Landing from "../component/Landing";
 
 
 function CodeEditor() {
   return (
     <div>
         <Navbar />
-      <h1>Code Editor</h1>
+        <Landing />
     </div>
   );
 }
