@@ -3,8 +3,13 @@ import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../component/Navbar";
 import "./Curriculum.css";
+import { useCookies } from 'react-cookie';
 
 function Curriculum() {
+
+    const [cookies] = useCookies(['user_id']);
+    const [userdata, setUserData] = useState("");
+    const [curriculum, setCurriculum] = useState("");
 
     const getCheckboxValue = (event) => {
         let result = '';
@@ -23,8 +28,57 @@ function Curriculum() {
     };
 
     const data = {
-        num: 0
+        num: 0,
+        level: userdata.level,
+        language: userdata.level
     }
+
+
+      /*
+    useEffect(() => {
+        fetch(`url` + "/" + cookies.id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                 Authorization: `Token ${localStorage.getItem('token')}`
+            },
+        })
+            .then(response => response.json())
+            .then(userdata => {
+                setUserData(userdata);
+            })
+            .catch(error => {
+                console.log(error)// Handle any errors
+            });
+    }, []);
+
+    */
+
+    /*
+    const level = userdata.level;
+    const language = userdata.language;
+
+    useEffect(() => {
+        fetch(`url` + "/" + level + "/" language, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                 Authorization: `Token ${localStorage.getItem('token')}`
+            },
+        })
+            .then(response => response.json())
+            .then(curridata => {
+                setCurriculum(curridata);
+            })
+            .catch(error => {
+                console.log(error)// Handle any errors
+            });
+    }, []);
+
+    const titles = curridata.map((item) => { item.title };
+
+    */
+
 
 
     return (
@@ -52,7 +106,7 @@ function Curriculum() {
                             <button
 
                                 onClick={() => {
-                                    navigate("/content", { state: { num: 1 } });
+                                    navigate("/content", { state: { num: 1} });
                                 }}
                                 style={{ marginTop: "1rem" }}> chapter 1 </button>
                             <button onClick={() => {

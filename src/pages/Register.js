@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "./Login.css";
 import Navbar from "../component/Navbar";
+import axios from "axios";
 
 
 const options = [
@@ -81,7 +82,7 @@ function Register(){
     setInputs({...inputs, [key]: obj[key]});
   };
 
-  const {user_id, password, language}= inputs;
+  const {user_id, password, language, teller}= inputs;
 
   function onChange(e) {
     const {value, name} = e.target;
@@ -91,9 +92,25 @@ function Register(){
       });
   };
 
-  const onClick = () => {
-    console.log(inputs);
-  };
+  function onClick(e) {
+    e.preventDefault();
+    console.log(user_id);
+    console.log(password);
+    console.log(language);
+    console.log(teller);
+    axios
+      .post("http://localhost:8080/users", { //spring에서도 @Getmapping("/users") 통해 설정
+        userId: user_id,
+        password: password,
+        language: language,
+        teller: teller,
+      }).then((res) => { //데이터 전송 성공 시 response 받음
+        console.log("데이터 전송 성공");
+      })
+      .catch(function (err) { //데이터 전송 실패 시 error 받음
+        console.log("데이터 전송 실패 :  " + err);
+      });
+  }
 
   const renderForm = (
     <div className="login_form">

@@ -9,11 +9,15 @@ function Content(props) {
 
     // Assuming you have a state variable named "data"
     const [data, setData] = useState([]);
+    const location = useLocation();
+    const num = location.state.num;
+    //const level = location.state.level;
+   // const language = location.state.location;
 
     // Inside the component or useEffect
     /*
     useEffect(() => {
-        fetch(`url`, {
+        fetch(`url` + "/" + level + "/" language, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,8 +35,8 @@ function Content(props) {
 
     */
 
-    const location = useLocation();
-    const num = location.state.num;
+
+
     console.log(num);
 
     /*

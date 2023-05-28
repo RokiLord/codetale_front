@@ -8,11 +8,13 @@ import Curriculum from './pages/Curriculum'
 import Content from './pages/Content';
 import CodeEditor from './pages/CodeEditor';
 import Register from './pages/Register';
+import { CookiesProvider } from 'react-cookie';
 
 
 function App() {
   return (
     <div className="App">
+      <CookiesProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
@@ -23,6 +25,7 @@ function App() {
           <Route path="codeeditor" element={<CodeEditor />} />
         </Routes>
       </BrowserRouter>
+      </CookiesProvider>
     </div>
   );
 }

@@ -3,12 +3,27 @@ import "./Login.css"
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../component/Navbar';
+import { useCookies } from 'react-cookie';
+
 
 
 function Login(props) {
 
 
+  const [cookies, setCookie] = useCookies(['user_id']);
+  const [pwd, setPwd] = useState("");
+  const [id, setId] = useState("");
   const navigate  = useNavigate();
+
+
+
+  const handleCookie = () => {
+    setCookie('id', id, { path: '/' });
+    setCookie('Password', pwd, { path: '/' });
+ };
+
+
+
 
   const moveToRegisterPage = () => {
     navigate("/register");
@@ -56,6 +71,8 @@ function Login(props) {
       // user_id not found
       setErrorMessages({ name: "uname", message: errors.uname });
     }
+
+    handleCookie();
   };
 
   // Generate JSX code for error message
@@ -71,12 +88,12 @@ function Login(props) {
       <form onSubmit={handleSubmit}>
         <div className="login_input-container">
           <label>user_id </label>
-          <input type="text" name="uname" required />
+          <input type="text" name="uname" value={id}  onChange={(e) => setId(e.target.value)} required />
           {renderErrorMessage("uname")}
         </div>
         <div className="login_input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
+          <input type="password" name="pass" value={pwd} onChange={(e) => setPwd(e.target.value)} required />
           {renderErrorMessage("pass")}
         </div>
         <div className="login_button-container">
