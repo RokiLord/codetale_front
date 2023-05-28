@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import CodeEditorWindow from "./CodeEditorWindow";
 import axios from "axios";
 import { classnames } from "../utils/general";
@@ -17,6 +17,7 @@ import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguagesDropdown";
 import Question from "./Question";
 import QuestionTitle from "./QuestionTitle";
+import "./Landing.css";
 
 const javascriptDefault = `/**
 * Problem: Binary Search: Search a sorted array for a target value.
@@ -97,6 +98,9 @@ const Landing = () => {
       headers: {
         "content-type": "application/json",
         "Content-Type": "application/json",
+
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+
         "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
         "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
       },
@@ -134,6 +138,7 @@ const Landing = () => {
       url: process.env.REACT_APP_RAPID_API_URL + "/" + token,
       params: { base64_encoded: "true", fields: "*" },
       headers: {
+
         "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
         "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
       },
@@ -208,18 +213,18 @@ const Landing = () => {
 
 
   return (
-    <>
+    <Fragment>
 
-      <div className="flex flex-row">
-        <div className="px-4 py-2">
+      <div className="langdrop">
+        <div className="langdropbox">
           <LanguagesDropdown onSelectChange={onSelectChange} />
         </div>
-        <div className="px-4 py-2">
+        <div className="langdropbox">
           <ThemeDropdown handleThemeChange={handleThemeChange} theme={theme} />
         </div>
       </div>
-      <div className="flex flex-row space-x-4 items-start px-4 py-4">
-        <div className="flex flex-col w-full h-full justify-start items-end">
+      <div className="codeeditorbox">
+        <div className="codeeditorwindow">
           <CodeEditorWindow
             code={code}
             onChange={onChange}
@@ -228,11 +233,20 @@ const Landing = () => {
           />
         </div>
 
-        <div className="right-container flex flex-shrink-0 w-[30%] flex-col">
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          flexShrink: "0",
+          width: "30%",
+        }}>
           <QuestionTitle></QuestionTitle>
           <Question></Question>
           <OutputWindow outputDetails={outputDetails} />
-          <div className="flex flex-col items-end">
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+          }}>
             <CustomInput
               customInput={customInput}
               setCustomInput={setCustomInput}
@@ -240,6 +254,7 @@ const Landing = () => {
             <button
               onClick={handleCompile}
               disabled={!code}
+
               className={classnames(
                 "mt-4 border-2 border-black z-10 rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200 bg-white flex-shrink-0",
                 !code ? "opacity-50" : ""
@@ -255,7 +270,7 @@ const Landing = () => {
 
       </div>
 
-    </>
+    </Fragment>
   );
 };
 export default Landing;

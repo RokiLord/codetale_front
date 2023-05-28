@@ -7,6 +7,18 @@ const CustomInput = ({ customInput, setCustomInput }) => {
       {" "}
       <textarea
         rows="5"
+        style={{zIndex: "10",
+        paddingTop: "0.5rem",
+        paddingBottom: "0.5rem",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
+        backgroundColor: "#ffffff",
+        transitionProperty: "background-color, border-color, color, fill, stroke, opacity, box-shadow, transform",
+        transitionDuration: "200ms",
+        width: "100%",
+        borderRadius: "0.375rem",
+        borderWidth: "2px",
+        borderColor: "#000000",}}
         value={customInput}
         onChange={(e) => setCustomInput(e.target.value)}
         placeholder={`Custom input`}

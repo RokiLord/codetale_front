@@ -30,7 +30,8 @@ function Curriculum() {
     return (
         <Fragment className="curriculum_backgroud">
 
-            <button class="back_button" ><img src="../images/backspace.jpg" height="50" /></button>
+            <Navbar />
+
 
             <div className="support-grid"></div>
 
